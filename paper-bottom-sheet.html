@@ -137,6 +137,10 @@ A material design modal [bottom sheet](https://www.google.com/design/spec/compon
 			}
 		},
 
+		isOpened: function() {
+			return this.$.dialog.opened;
+		},
+
 		/**
 		 * Computed property function- changes the animation config of the dialog based on presence of "slide" attr
 		 * @param  {Boolean} slide True if the bottom sheet should slide in
@@ -165,6 +169,8 @@ A material design modal [bottom sheet](https://www.google.com/design/spec/compon
 		_attemptRemoval: function() {
 			// Remove this element from DOM if there is an animation and the dialog just closed
 			Polymer.dom(this.parentNode).removeChild(this);
+
+			this.fire('paper-bottom-sheet-closed', {sheet: this});
 		}
 	});
 
