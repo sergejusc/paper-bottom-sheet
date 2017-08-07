@@ -34,6 +34,7 @@ A material design modal [bottom sheet](https://www.google.com/design/spec/compon
 				@apply(--paper-bottom-sheet);
 			}
 
+      *[hidden] { display: none !important; }
 		</style>
 
 		<paper-dialog id="dialog" class="dialog" animation-config="{{_dialogAnimationConfig}}" modal="[[modal]]" with-backdrop="[[withBackdrop]]" on-iron-overlay-closed="_attemptRemoval" on-iron-overlay-opened="_onOpened" auto-fit-on-attach>
